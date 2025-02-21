@@ -1,0 +1,79 @@
+{
+    "timestamp": "2025-01-24T12:41:24.422740",
+    "targets": [
+        "45.33.32.156"
+    ],
+    "results": {
+        "targets": [
+            "45.33.32.156"
+        ],
+        "MasscanScanner": {
+            "45.33.32.156": {
+                "resolved_ip": "45.33.32.156", 
+                "open_ports": [
+                    80,
+                    9929,
+                    31337,
+                    22
+                ]
+            }
+        },
+        "WAFDetector": {
+            "45.33.32.156": {
+                "waf_detected": false,
+                "waf_details": ""
+            }
+        },
+        "WebScanner": {
+            "http://45.33.32.156:80": {
+                "status_code": 200,
+                "server": "Apache/2.4.7 (Ubuntu)",
+                "dirsearch": [
+                    "# Dirsearch started Fri Jan 24 12:41:00 2025 as: /Users/sabersebri/miniconda3/bin/dirsearch -u http://45.33.32.156:80 -o dirsearch_http___45.33.32.156_80.txt",
+                    "",
+                    "403   290B   http://45.33.32.156/.ht_wsr.txt",
+                    "403   293B   http://45.33.32.156/.htaccess.orig",
+                    "403   293B   http://45.33.32.156/.htaccess.bak1",
+                    "403   295B   http://45.33.32.156/.htaccess.sample",
+                    "403   293B   http://45.33.32.156/.htaccess.save",
+                    "403   291B   http://45.33.32.156/.htaccess_sc",
+                    "403   293B   http://45.33.32.156/.htaccess_orig",
+                    "403   294B   http://45.33.32.156/.htaccess_extra",
+                    "403   291B   http://45.33.32.156/.htaccessOLD",
+                    "403   291B   http://45.33.32.156/.htaccessBAK",
+                    "403   283B   http://45.33.32.156/.htm",
+                    "403   292B   http://45.33.32.156/.htaccessOLD2",
+                    "403   284B   http://45.33.32.156/.html",
+                    "403   290B   http://45.33.32.156/.httr-oauth",
+                    "403   293B   http://45.33.32.156/.htpasswd_test",
+                    "403   289B   http://45.33.32.156/.htpasswds",
+                    "301   310B   http://45.33.32.156/.svn    -> REDIRECTS TO: http://45.33.32.156/.svn/",
+                    "403   291B   http://45.33.32.156/.svn/entries",
+                    "403   295B   http://45.33.32.156/.svn/all-wcprops",
+                    "403   284B   http://45.33.32.156/.svn/",
+                    "403   288B   http://45.33.32.156/.svn/prop",
+                    "403   288B   http://45.33.32.156/.svn/text",
+                    "403   312B   http://45.33.32.156/.svn/text-base/index.php.svn-base",
+                    "403   294B   http://45.33.32.156/.svn/text-base/",
+                    "403   289B   http://45.33.32.156/.svn/wc.db",
+                    "403   290B   http://45.33.32.156/favicon.ico",
+                    "301   312B   http://45.33.32.156/images    -> REDIRECTS TO: http://45.33.32.156/images/",
+                    "200   457B   http://45.33.32.156/images/",
+                    "403   293B   http://45.33.32.156/server-status/",
+                    "403   292B   http://45.33.32.156/server-status",
+                    "301   312B   http://45.33.32.156/shared    -> REDIRECTS TO: http://45.33.32.156/shared/"
+                ]
+            }
+        },
+        "VulnScanner": {
+            "http://45.33.32.156:80": [
+                {
+                    "cve_id": "CVE-2021-XXXX",
+                    "description": "Apache XX Vulnerability",
+                    "severity": "High",
+                    "evidence": null
+                }
+            ]
+        }
+    }
+}

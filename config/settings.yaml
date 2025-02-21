@@ -1,0 +1,57 @@
+logging:
+  level: "DBEUG"   # DEBUG, INFO, WARNING, ERROR
+
+scanning:
+  # MASSCAN settings
+  masscan_binary: "/modules/masscan" # masscan binary implemented in the master repository
+  rate: 1000                 # packets per second
+  ports: "80-443"            # port range or specific ports e.g. "80,443,8080"
+  additional_args: ""  # extra arguments for masscan
+  output_file: "masscan_results.txt"
+
+  # NMAP settings
+  nmap_binary: "/modules/masscan"
+  rate2: 500				# to personnalize according to user's input
+  ports2: "10-1000"			# to personnalize according to user's input
+  additional_args2: ""		# same thing here
+  output_file2: "nmap_results.txt"
+
+
+  # TODO AFTER RECON PHASE
+
+subdomain_enum:
+  mode: "passive"            # can be "passive", "active", or "both"
+  subfinder_binary: "/opt/homebrew/bin/subfinder" # or /usr/local/bin/subfinder
+  subfinder_args: "-silent"
+  wordlist: "wordlists/subdomains.txt"  # for active/bruteforce
+  threads: 50
+
+dns_analysis:
+  check_mx: true
+  check_ns: true
+  check_txt: true
+  # Additional custom DNS checks here
+
+waf_detector:
+  enabled: true
+
+web_scanner:
+  enabled: true
+  dirsearch_binary: "/Users/sabersebri/miniconda3/bin/dirsearch" # /usr/local/bin/dirsearch
+  # Additional arguments or concurrency settings for dirsearch:
+  dirsearch_args: "" #-e php,asp,js -w wordlists/dirsearch_common.txt -r -t 20
+  # You can also embed these in a dictionary if you prefer
+
+ssl_scanner:
+  enabled: true
+
+vuln_scanner:
+  enabled: true
+  provider: "vulners"  # or "my_custom_api"
+  vulners_api_key: "HEDH5WU1H3I28N6U7Q80MYPSPZSVBTT19Q9TIB3MIRLH2KXC37D0LL4GNNTQZGLQ"
+
+breach_lookup:
+  enabled: false
+  provider: "dehashed"  # or "haveibeenpwned"
+  api_key: "YOUR_BREACH_API_KEY"
+  api_secret: "YOUR_BREACH_API_SECRET"
