@@ -3,7 +3,9 @@
   <div class="container">
     <IntroSection class="style-section" />
     <hr>
-    <ContactSection class="style-section" />
+    <WhySentry id="WhySentry" class="style-section"/>
+    <hr>
+    <ContactSection id="contact" class="style-section-contact" />
   </div>
   <FooterBar />
 </template>
@@ -13,11 +15,12 @@ import ContactSection from './components/ContactSection.vue';
 import FooterBar from './components/html/FooterBar.vue';
 import NavigationBar from './components/html/NavigationBar.vue';
 import IntroSection from './components/IntroSection.vue';
+import WhySentry from './components/WhySentry.vue';
 
 
 export default {
   components: {
-    NavigationBar, ContactSection, IntroSection, FooterBar
+    NavigationBar, ContactSection, IntroSection, FooterBar, WhySentry
   }
 }
 </script>
@@ -37,7 +40,11 @@ export default {
 }
 
 .style-section {
-  min-height: 80vh;
+  min-height: 93vh;
+}
+
+.style-section-contact {
+  min-height: 55vh;
 }
 
 nav {
