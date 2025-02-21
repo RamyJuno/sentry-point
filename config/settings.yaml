@@ -1,5 +1,5 @@
 logging:
-  level: "DBEUG"   # DEBUG, INFO, WARNING, ERROR
+  level: "DEBUG"   # DEBUG, INFO, WARNING, ERROR
 
 scanning:
   # MASSCAN settings
@@ -10,7 +10,7 @@ scanning:
   output_file: "masscan_results.txt"
 
   # NMAP settings
-  nmap_binary: "/modules/masscan"
+  nmap_binary: "/modules/nmap"
   rate2: 500				# to personnalize according to user's input
   ports2: "10-1000"			# to personnalize according to user's input
   additional_args2: ""		# same thing here
