@@ -12,6 +12,8 @@ def main():
 
     controller = Controller("config/settings.yaml")
     controller.run(targets)
+    
+    print("script lancé")
 
 if __name__ == "__main__":
     main()
