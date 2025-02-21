@@ -1,18 +1,43 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <NavigationBar />
+  <div class="container">
+    <IntroSection class="style-section" />
+    <hr>
+    <ContactSection class="style-section" />
+  </div>
+  <FooterBar />
 </template>
 
+<script>
+import ContactSection from './components/ContactSection.vue';
+import FooterBar from './components/html/FooterBar.vue';
+import NavigationBar from './components/html/NavigationBar.vue';
+import IntroSection from './components/IntroSection.vue';
+
+
+export default {
+  components: {
+    NavigationBar, ContactSection, IntroSection, FooterBar
+  }
+}
+</script>
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Rubik", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
+}
+
+.style-section {
+  min-height: 80vh;
 }
 
 nav {
