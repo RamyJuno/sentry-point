@@ -13,6 +13,7 @@ from modules.web_scanner import WebScanner
 from modules.vuln_scanner import VulnScanner
 from modules.breach_lookup import BreachLookup
 from modules.ssl_scanner import SSLScanner
+from modules.nmap_scanner import NmapScanner
 
 class Controller:
     def __init__(self, config_path="config/settings.yaml"):
@@ -38,6 +39,9 @@ class Controller:
 
         # Masscan-based Port Scanning
         self.modules.append(MasscanScanner(self.config))
+        
+        # Nmap-based port scanning
+        self.modules.append(NmapScanner(self.config))
 
         # WAF Detection
         if self.config.get("waf_detector", {}).get("enabled", False):
